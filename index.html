@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title> Animacija </title>
+        <style>
+            .background {
+                width: 600px;
+                height: 492px;
+                background-color:  #050210;
+                margin: auto;
+            }
+            .Krug1 {
+                position: absolute;
+                width: 320px;
+                height: 320px;
+                border-radius: 50%;
+                background: linear-gradient( #fb5dad, #55fb9f, #b97aff);
+                margin: auto;
+                left: 0 ;
+                right: 0;
+                top: 86px; 
+                animation: animacija 2s linear infinite;
+               
+            }
+               @keyframes animacija{
+        100%{transform: rotate(1turn);}
+                }
+            .Krug1::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: linear-gradient( #fb5dad, #55fb9f, #b97aff); 
+                filter: blur( 80px);
+            }
+            .Krug2 {
+                position: absolute;
+                width: 270px;
+                height: 270px;
+                border-radius: 50%;
+                background-color: #050210;
+                margin: auto;
+                left: 0;
+                right: 0;
+                top: 111px;
+            }
+             #Krug2a { 
+                z-index: 1;
+                animation: grow 1.5s infinite linear forwards;
+            }
+                @keyframes grow {
+                  from {
+                     transform: scale(0.2); filter: brightness(1.5);
+                  }
+                  to {
+                     transform: scale(1); filter: brightness(4);
+                  }
+                }
+        
+        </style>
+
+    </head>
+    <body>
+        <div class="background">
+            <div class="Krug1"></div>
+            <div class="Krug2" id="Krug2a"></div>
+            <div class="Krug2"></div>
+        </div>
+        
+
+    </body>
+</html>
